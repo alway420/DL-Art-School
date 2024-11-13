@@ -22,26 +22,32 @@ _whitespace_re = re.compile(r'\s+')
 
 # List of (regular expression, replacement) pairs for abbreviations:
 _abbreviations = [(re.compile('\\b%s\\.' % x[0], re.IGNORECASE), x[1]) for x in [
-  ('mrs', 'misess'),
-  ('mr', 'mister'),
-  ('dr', 'doctor'),
-  ('st', 'saint'),
-  ('co', 'company'),
-  ('jr', 'junior'),
-  ('maj', 'major'),
-  ('gen', 'general'),
-  ('drs', 'doctors'),
-  ('rev', 'reverend'),
-  ('lt', 'lieutenant'),
-  ('hon', 'honorable'),
-  ('sgt', 'sergeant'),
-  ('capt', 'captain'),
-  ('esq', 'esquire'),
-  ('ltd', 'limited'),
-  ('col', 'colonel'),
-  ('ft', 'fort'),
+  ('mh', 'mheshimiwa'),
+  ('dk', 'daktari'),
+  ('bw', 'bwana'),
+  ('bi', 'bibi'),
+  ('wazr', 'waziri'),
+  ('rais', 'rais'),
+  ('prof', 'profesa'),
+  ('mw', 'mwalimu'),
+  ('mtaa', 'mtaa'),
+  ('mkoa', 'mkoa'),
+  ('wilaya', 'wilaya'),
+  ('kij', 'kijiji'),
+  ('km', 'kilometer'),
+  ('saa', 'saa'),
+  ('da', 'desemba'),
+  ('jan', 'januari'),
+  ('feb', 'februari'),
+  ('mac', 'machi'),
+  ('mei', 'mei'),
+  ('jun', 'juni'),
+  ('jul', 'julai'),
+  ('agu', 'agosti'),
+  ('sep', 'septemba'),
+  ('okt', 'oktoba'),
+  ('nov', 'novemba'),
 ]]
-
 
 def expand_abbreviations(text):
   for regex, replacement in _abbreviations:
@@ -81,7 +87,7 @@ def transliteration_cleaners(text):
 
 
 def english_cleaners(text):
-  '''Pipeline for English text, including number and abbreviation expansion.'''
+  '''Pipeline for Kiswahili text, including number and abbreviation expansion.'''
   text = convert_to_ascii(text)
   text = lowercase(text)
   text = expand_numbers(text)
